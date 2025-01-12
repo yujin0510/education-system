@@ -1,37 +1,41 @@
-HELP.md
 .gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+**/build/
+**/.settings/
+**/bin/
+!src/**/build/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Avoid ignore Gradle wrappper properties
+!gradle-wrapper.properties
+
+# Cache of project
+.gradletasknamecache
+
+# Eclipse Gradle plugin generated files
+# Eclipse Core
 .project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+/.metadata/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+application.yml
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Gradle 빌드 파일 제외
+*/build/
+*/gradle/
 
-### VS Code ###
-.vscode/
+# OS별 임시 파일
+.DS_Store
+Thumbs.db
+
+# Java 빌드 파일
+*.class
+*.jar
+*.war
+
+demo/HELP.md
