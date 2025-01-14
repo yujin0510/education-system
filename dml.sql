@@ -10,10 +10,11 @@ values(seqChat.nextVal, default, '');
 update chat set content = '' where seq = 1;
 
 -- class
+select * from class;
 insert into class(seq, className) values(seqClass.nextVal, 'Front-end 개발자(aka 클라이언트 개발자) 과정A');
 insert into class(seq, className) values(seqClass.nextVal, 'Back-end 개발자(aka 서버 개발자) 과정A');
 insert into class(seq, className) values(seqClass.nextVal, 'Full-stack 개발자 과정');
 insert into class(seq, className) values(seqClass.nextVal, 'Mobile 개발자 과정A');
-update class set className = '' where seq = 1;
+--update class set className = '' where seq = 1;
 
 
