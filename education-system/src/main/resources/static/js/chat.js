@@ -4,9 +4,9 @@ const url = 'ws://localhost:8090/chatService';
 let ws;
 
 // 대화명 설정 + 서버 연결
-function connect(name){
-	name = $(opener.document).find('.in').data('name');
-	alert(name);
+function connect(userName){
+	name = userName;
+	//alert(name);
 	$('#header small').text(name);
 	
 	// 연결하기 + 소켓 생성
@@ -18,25 +18,28 @@ function connect(name){
 		
 		// 서버와 접속 확인 > 접속한 유저명을 서버에게 전달
 		//ws.send('강아지'); //저 강아지에요...
-		if (ws.readyState == WebSocket.OPEN) {
+		
 
-			const message = {
-					code : 1,
-					sender : name,
-					content : '',
-					creationDate : dayjs().format('YYYY-MM-DD HH:mm:ss') // 2024-10-24 12:28:46
-			};
-			
-			// 객체 > JSON(문자열) > 객체를 JSON문자열로 변경할거임		
-			ws.send(JSON.stringify(message));
-		}
+		const message = {
+				code : 1,
+				sender : name,
+				content : '',
+				creationDate : dayjs().format('YYYY-MM-DD HH:mm:ss') // 2024-10-24 12:28:46
+		};
+		console.log("여기 확인하기: " + JSON.stringify(message));
+		// 객체 > JSON(문자열) > 객체를 JSON문자열로 변경할거임		
+		ws.send(JSON.stringify(message));
+		
 	
 	};
 	ws.onmessage = evt =>{
 		//{"code":1,"sender":"강아지","content":"","regdate":"2024-10-24 12:32:41"}
 		
 		log('메시지를 수신했습니다.');
+		// "Server received: " 부분을 제거하고 JSON 파싱
+		// const jsonData = evt.data.replace(/^Server received: /, '');
 		const message = JSON.parse(evt.data);
+
 		//document.title = message.sender;
 		
 		if(message.code == '1'){
@@ -53,7 +56,7 @@ function connect(name){
 			
 		}
 		
-		
+		``
 	};
 	ws.onclose = evt =>{
 		log('서버와 연결이 종료되었습니다.');
@@ -97,7 +100,7 @@ function disconnect(){
 			content : '',
 			creationDate : dayjs().format('YYYY-MM-DD HH:mm:ss') // 2024-10-24 12:28:46
 	};
-	
+	console.log("여기 확인하기: " + JSON.stringify(message));
 	ws.send(JSON.stringify(message));
 	
 	ws.close();

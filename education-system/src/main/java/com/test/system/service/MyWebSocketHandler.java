@@ -11,7 +11,7 @@ public class MyWebSocketHandler extends TextWebSocketHandler {
     @Override
     public void handleTextMessage(WebSocketSession session, TextMessage message) {
         try {
-            session.sendMessage(new TextMessage("Server received: " + message.getPayload()));
+            session.sendMessage(new TextMessage(message.getPayload()));
         } catch (IOException e) {
             e.printStackTrace();
         }

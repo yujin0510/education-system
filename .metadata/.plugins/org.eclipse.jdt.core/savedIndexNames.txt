@@ -86,7 +86,6 @@ INDEX VERSION 1.134+C:\class\project\education-system\.metadata\.plugins\org.ecl
 4110212164.index
 1005348591.index
 623629448.index
-15680744.index
 1338943810.index
 1537891318.index
 565093655.index

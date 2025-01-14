@@ -23,7 +23,7 @@ $('.in').click(function(event) {
 
 	// 시간 예측 안하고 로딩이 끝나면 넣어짐
 	child.addEventListener('load', () => {
-		child.connect($('#name').val());
+		child.connect(name);
 	});
 
 
