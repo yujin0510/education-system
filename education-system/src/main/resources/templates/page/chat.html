@@ -3,13 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Education-System</title>
-	<th:block th:insert="~{inc/header.html :: css}"></th:block>
+	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
+	<link rel="stylesheet" th:href="@{css/chat.css}" />
 	<style>
 		
 	</style>
 </head>
 <body>
 
+	<div id="main">
+		<div id="header"><h2>WebSocket <small></small></h2></div>
+		<div id="list"></div>
+		<input type="text" id="msg" placeholder="대화 내용을 입력하세요.">	
+	</div>
 	
+	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>
+	<script th:src="@{js/chat.js}"></script>
 </body>
 </html>

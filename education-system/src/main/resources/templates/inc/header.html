@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Education-System</title>
-	<th:block th:fragment="css"><link rel="stylesheet" href="http://bit.ly/3WJ5ilK"></th:block>
+	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
 	
 	<style>
 
@@ -16,7 +16,6 @@
 
 <body>
 	<header th:fragment="menu">
-		<link rel="stylesheet" th:href="@{css/header.css}" />
 		<ul id="headerMenu">
 			<li><a href="/">Main</a></li>
 			<li><a href="/signup">Sign Up</a></li>
