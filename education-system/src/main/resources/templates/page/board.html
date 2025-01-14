@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 	<meta charset="UTF-8">
 	<title>Education-System</title>
-	<link rel="stylesheet" href="http://bit.ly/3WJ5ilK">
+	<th:block th:insert="~{inc/header.html :: css}"></th:block>
 	<style>
 		
 	</style>
 </head>
 <body>
+	<th:block th:insert="~{inc/header.html :: menu}"></th:block>
 	<h1>board</h1>
 	<div>게시판 페이지</div>
 	
