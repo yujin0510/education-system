@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<title>Education-System</title>
+	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
+	<link rel="stylesheet" th:href="@{css/main.css}" />
+	<style>
+		
+	</style>
+</head>
+<body>
+	<th:block th:insert="~{inc/header.html :: menu}"></th:block>
+	<h1>Main</h1>
+	<div>메인 페이지</div>
+	
+	
+	<hr>
+	<h3>채팅하기</h3>
+	<div>
+		<!--<div>seq : <span sec:authentication="principal.preStudent.seq"></span></div>-->
+		<button type="button" class="in" th:data-name="${userDTO.username}" th:text="'채팅하기 (' + ${userDTO.username} + ')'"></button>
+		<button type="button" class="in" data-name="강아지">들어가기(강아지)</button>
+		<button type="button" class="in" data-name="고양이">들어가기(고양이)</button>
+		<button type="button" class="in" data-name="병아리">들어가기(병아리)</button>
+	</div>
+	<hr>
+	
+	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>
+	<script th:src="@{js/main.js}"></script>
+	
+</body>
+</html>

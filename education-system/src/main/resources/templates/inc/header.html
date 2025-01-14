@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Education-System</title>
+	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
+	
+	<style>
+
+	</style>
+</head>
+<!-- 추후 인증 정보와 허가 정보에 따라서 li태그가 보이지 않도록 수정 -->
+
+<body>
+	<header th:fragment="menu">
+		<ul id="headerMenu">
+			<li><a href="/">Main</a></li>
+			<li><a href="/signup">Sign Up</a></li>
+			<li><a href="/login">Login</a></li>
+			<li><a href="/logout">LogOut</a></li>
+			<li><a href="/my">My Page</a></li>
+			<li><a href="/admin">Admin Page</a></li>
+			<li><a href="/board">Board</a></li>
+		</ul>
+	</header>
+
+</body>
+
+</html>
