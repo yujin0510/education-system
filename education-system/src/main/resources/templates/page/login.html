@@ -3,14 +3,43 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Education-System</title>
-	<link rel="stylesheet" href="http://bit.ly/3WJ5ilK">
+	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
+	<link rel="stylesheet" th:href="@{css/login.css}">
 	<style>
 		
 	</style>
 </head>
 <body>
-	<h1>Login</h1>
-	<div>로그인 페이지</div>
+	<th:block th:insert="~{inc/header.html :: menu}"></th:block>
+	<div class="login-container">
+		<div class="login-content">
+			<div class="login-title">LOGIN <small class="login-subtitle">회원전용서비스</small></div>
+			<div class="content">로그인 후 확인할 수 있습니다.</div>
+			<div class="sub-content">
+				아이디와 비밀번호를 입력해주세요
+				<br>
+				아직 회원이 아니신 분들은 회원가입 후 서비스를 이용하실 수 있습니다.
+			</div>
+		</div>
+		<!--로그인 폼 이어서 작업하기-->
+		<div class="login-form">
+			<table class="login-form-content">
+				<tr>
+					<td class="userid">
+						<input type="text">
+					</td>
+				</tr>
+				<tr>
+					<td class="userpassword">
+						<input type="password">
+					</td>
+				</tr>
+			</table>
+			<div class="login-btn">로그인</div>
+		</div>
+	</div>
+	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>
+	<script th:src="@{js/main.js}"></script>
 	
 </body>
 </html>
