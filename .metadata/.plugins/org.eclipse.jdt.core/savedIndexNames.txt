@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.134+C:\class\springBoot\.metadata\.plugins\org.eclipse.jdt.core
 3663795395.index
 991389164.index
@@ -104,3 +105,9 @@ INDEX VERSION 1.134+C:\class\springBoot\.metadata\.plugins\org.eclipse.jdt.core
 373375943.index
 2534773908.index
 3531546312.index
+=======
+INDEX VERSION 1.134+C:\class\project\education-system\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3413270776.index
+15680744.index
+>>>>>>> 2221742146cce7501223989d4189dcc091ae43ba

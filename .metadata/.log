@@ -7363,7 +7363,11 @@ java.lang.InterruptedException
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
 >>>>>>> 29f61c056bebd1e4b8e0844dc1fa0a8bdd1a8769
+<<<<<<< HEAD
 !SESSION 2025-01-14 23:09:23.773 -----------------------------------------------
+=======
+!SESSION 2025-01-15 00:34:31.067 -----------------------------------------------
+>>>>>>> 2221742146cce7501223989d4189dcc091ae43ba
 eclipse.buildId=4.33.0.202410162246
 java.version=21.0.4
 java.vendor=Oracle Corporation
@@ -7371,6 +7375,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Framework arguments:  -product org.springframework.boot.ide.branding.sts4
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
 
+<<<<<<< HEAD
 !ENTRY ch.qos.logback.classic 1 0 2025-01-14 23:09:50.168
 !MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
 
@@ -7490,6 +7495,18 @@ java.lang.Exception: The project description file (.project) for '.org.eclipse.e
 !MESSAGE Unable to load resource file:/C:/class/springBoot/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
 !STACK 0
 org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException: org.xml.sax.SAXParseExceptionpublicId: file:/C:/class/springBoot/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/C:/class/springBoot/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 2; columnNumber: 2; The markup in the document preceding the root element must be well-formed.
+=======
+!ENTRY ch.qos.logback.classic 1 0 2025-01-15 00:36:42.491
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-01-15 00:36:51.406
+!MESSAGE Logback config file: C:\class\project\education-system\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2025-01-15 00:36:54.070
+!MESSAGE Unable to load resource file:/C:/class/project/education-system/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+!STACK 0
+org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException: org.xml.sax.SAXParseExceptionpublicId: file:/C:/class/project/education-system/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/C:/class/project/education-system/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 2; columnNumber: 2; The markup in the document preceding the root element must be well-formed.
+>>>>>>> 2221742146cce7501223989d4189dcc091ae43ba
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.handleDemandLoadException(ResourceSetImpl.java:319)
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:278)
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getResource(ResourceSetImpl.java:406)
@@ -7514,7 +7531,11 @@ org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException:
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1454)
+<<<<<<< HEAD
 Caused by: org.xml.sax.SAXParseExceptionpublicId: file:/C:/class/springBoot/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/C:/class/springBoot/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 2; columnNumber: 2; The markup in the document preceding the root element must be well-formed.
+=======
+Caused by: org.xml.sax.SAXParseExceptionpublicId: file:/C:/class/project/education-system/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/C:/class/project/education-system/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 2; columnNumber: 2; The markup in the document preceding the root element must be well-formed.
+>>>>>>> 2221742146cce7501223989d4189dcc091ae43ba
 	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
 	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
 	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
@@ -7538,7 +7559,11 @@ Caused by: org.xml.sax.SAXParseExceptionpublicId: file:/C:/class/springBoot/.met
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
 	... 22 more
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.e4.ui.workbench 4 0 2025-01-14 23:09:51.833
+=======
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2025-01-15 00:36:54.090
+>>>>>>> 2221742146cce7501223989d4189dcc091ae43ba
 !MESSAGE The persisted application model has no top-level window. Reinitializing with the default application model.
 !STACK 0
 java.lang.Exception
@@ -7562,6 +7587,7 @@ java.lang.Exception
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1454)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.ui 2 0 2025-01-14 23:09:51.936
 !MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
 !SUBENTRY 1 org.eclipse.ui 2 0 2025-01-14 23:09:51.936
@@ -7575,10 +7601,26 @@ java.lang.Exception
 !ENTRY org.eclipse.egit.ui 2 0 2025-01-14 23:09:56.463
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\user'. If this is
+=======
+!ENTRY org.eclipse.ui 2 0 2025-01-15 00:36:54.608
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-01-15 00:36:54.608
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2025-01-15 00:36:56.710
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-01-15 00:36:56.710
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-01-15 00:37:38.734
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\fjhgf'. If this is
+>>>>>>> 2221742146cce7501223989d4189dcc091ae43ba
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
+<<<<<<< HEAD
 !ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-14 23:09:56.723
 !MESSAGE Boot project ADDED: education-system
 
@@ -7589,6 +7631,18 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !MESSAGE Started Boot LS process
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-01-14 23:09:56.783
+=======
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-15 00:37:39.619
+!MESSAGE Boot project ADDED: education-system
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-15 00:37:39.629
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-15 00:37:39.849
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-01-15 00:37:40.005
+>>>>>>> 2221742146cce7501223989d4189dcc091ae43ba
 !MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
 START:
 C:\Program Files\Java\jdk-21\bin\javaw.exe
@@ -7597,12 +7651,17 @@ C:\Program Files\Java\jdk-21\bin\javaw.exe
 -XX:TieredStopAtLevel=1
 -Dspring.config.location=classpath:/application.properties
 -Xlog:jni+resolve=off
+<<<<<<< HEAD
 -XX:ErrorFile=C:/class/springBoot/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1736863796782
+=======
+-XX:ErrorFile=C:/class/project/education-system/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1736869060002
+>>>>>>> 2221742146cce7501223989d4189dcc091ae43ba
 -Dlanguageserver.hover-timeout=225
 -jar
 C:\class\dev\sts-4.26.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
 END
 
+<<<<<<< HEAD
 !ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-14 23:09:56.784
 !MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
 
@@ -7682,3 +7741,13 @@ Caused by: java.lang.IllegalStateException: The Plug-in Development Environment 
 	at org.eclipse.pde.internal.build.BundleHelper.getPlatformAdmin(BundleHelper.java:84)
 	at org.eclipse.pde.internal.core.MinimalState.<clinit>(MinimalState.java:86)
 	... 25 more
+=======
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-15 00:37:40.009
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-01-15 00:37:40.102
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 34112
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-15 00:37:47.020
+!MESSAGE Classpath changed for project: education-system
+>>>>>>> 2221742146cce7501223989d4189dcc091ae43ba
