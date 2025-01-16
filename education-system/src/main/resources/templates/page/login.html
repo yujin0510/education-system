@@ -26,16 +26,20 @@
 			<table class="login-form-content">
 				<tr>
 					<td class="userid">
-						<input type="text">
+						<input type="text" name="id" placeholder="ID">
 					</td>
 				</tr>
 				<tr>
 					<td class="userpassword">
-						<input type="password">
+						<input type="password" name="password" placeholder="Password">
 					</td>
 				</tr>
 			</table>
-			<div class="login-btn">로그인</div>
+			<button class="login-btn">로그인</button>
+			<div class="signup">
+				<span>아직 회원이 아니신가요?</span>
+				<button class="signup-btn" onclick="location.href='/signup'">회원가입</button>
+			</div>
 		</div>
 	</div>
 	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>

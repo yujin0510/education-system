@@ -1,58 +1,49 @@
-@import url("freesentation.css");
-/*
-font-family: 'Freesentation-9Black';
-font-family: 'Freesentation-8ExtraBold';
-font-family: 'Freesentation-7Bold';
-font-family: 'Freesentation-6SemiBold';
-font-family: 'Freesentation-5Medium';
-font-family: 'Freesentation-4Regular';
-font-family: 'Freesentation-3Light';
-font-family: 'Freesentation-2ExtraLight';
-font-family: 'Freesentation-1Thin';
-*/
+@import url("gmarketfont.css");
+
+.login-container {
+	text-align: center;
+}
 
 .login-content {
-	text-align: center;
 	margin: 50px 0 30px 0;
 }
 
 .login-title {
-	font-family: 'Freesentation-9Black';
+	font-family: 'GmarketSansBold';
 	font-size: 40px;
-	letter-spacing: 1px;
 	color: #04264C;
 	margin-bottom: 10px;
 }
 
 .login-subtitle {
-    font-family: 'Freesentation-6SemiBold';
+    font-family: 'GmarketSansMedium';
 	font-size: 20px;
 	font-weight: 100;
 }
 
 .content {
-	font-family: 'Freesentation-8ExtraBold';
+	font-family: 'GmarketSansBold';
 	font-size: 25px;
-	letter-spacing: 1px;
 	margin-bottom: 10px;
 }
 
 .sub-content {
-	font-family: 'Freesentation-4Regular';
-	letter-spacing: 1px;
+	font-size: 14px;
 }
 
 .login-form {
 	border-top: 1px solid #CCC;
 	border-bottom: 1px solid #CCC;
-	padding: 20px 0 20px 0;
-	display: flex;
+	padding: 20px 20px 20px 20px;
+	display: inline-flex;
+	justify-content: center;
 	text-align: center;
-	width: 500px;
+	width: 80%;
 }
 
 .login-form-content {
-	width: 250px;	
+	width: 20%;
+	margin: 0;
 }
 
 table td, table th {
@@ -63,7 +54,37 @@ table td, table th {
 	width: 100px;
 	height: 100px;
 	background-color: #04264C;
-	text-align: center;
-	align-content: center;
 	color: white;
+	padding: 0%;
 }
+
+.signup {
+	padding-left: 5%;
+	justify-content: center;
+	align-content: center;
+}
+
+.signup span {
+	font-size: 14px;	
+}
+
+.signup-btn {
+	width: 150px;
+	height: 25px;
+	background-color: #898989;
+	color: white;
+	display: block;
+	margin-top: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
