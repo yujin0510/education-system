@@ -1,0 +1,90 @@
+@import url("gmarketfont.css");
+
+.login-container {
+	text-align: center;
+}
+
+.login-content {
+	margin: 50px 0 30px 0;
+}
+
+.login-title {
+	font-family: 'GmarketSansBold';
+	font-size: 40px;
+	color: #04264C;
+	margin-bottom: 10px;
+}
+
+.login-subtitle {
+    font-family: 'GmarketSansMedium';
+	font-size: 20px;
+	font-weight: 100;
+}
+
+.content {
+	font-family: 'GmarketSansBold';
+	font-size: 25px;
+	margin-bottom: 10px;
+}
+
+.sub-content {
+	font-size: 14px;
+}
+
+.login-form {
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	padding: 20px 20px 20px 20px;
+	display: inline-flex;
+	justify-content: center;
+	text-align: center;
+	width: 80%;
+}
+
+.login-form-content {
+	width: 20%;
+	margin: 0;
+}
+
+table td, table th {
+	border: none;
+}
+
+.login-btn {
+	width: 100px;
+	height: 100px;
+	background-color: #04264C;
+	color: white;
+	padding: 0%;
+}
+
+.signup {
+	padding-left: 5%;
+	justify-content: center;
+	align-content: center;
+}
+
+.signup span {
+	font-size: 14px;	
+}
+
+.signup-btn {
+	width: 150px;
+	height: 25px;
+	background-color: #898989;
+	color: white;
+	display: block;
+	margin-top: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
