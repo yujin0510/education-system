@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Education-System</title>
 	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
-	<link rel="stylesheet" th:href="@{css/login.css}">
+	<link rel="stylesheet" th:href="@{css/signup.css}">
 	<style>
 		
 	</style>
@@ -13,7 +13,46 @@
 	<th:block th:insert="~{inc/header.html :: menu}"></th:block>
 	<div class="signup-container">
 		<div class="signup-content">
-			회원가입
+			<div class="signup-title">회원가입</div>
+		</div>
+		<div class="signup-form">
+			<table class="signup-form-content">
+				<tr>
+					<th>아이디</th>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<th>비밀번호</th>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<th>이름</th>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<th>생년월일</th>
+					<td><input type="date"></td>
+				</tr>
+				<tr>
+					<th>연락처</th>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<th>이메일</th>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<th>성별</th>
+					<td>
+						<input type="radio" id="man" name="gender" value="1">남자
+						<input type="radio" id="woman" name="gender" value="2">여자
+					</td>
+				</tr>
+				<tr>
+					<th>주소</th>
+					<td><input type="text"></td>
+				</tr>
+			</table>
 		</div>
 	</div>
 	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>
