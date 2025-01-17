@@ -11,8 +11,11 @@
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="jakarta.websocket.OnError"/>
-    <fullyQualifiedTypeName name="jakarta.websocket.Session"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="jakarta.websocket.Session"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.mysema.commons.lang.URLEncoder"/>
+    <fullyQualifiedTypeName name="java.net.URLEncoder"/>
 </qualifiedTypeNameHistroy>
