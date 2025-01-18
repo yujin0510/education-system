@@ -14,23 +14,26 @@
 	<div class="signup-container">
 		<div class="signup-content">
 			<div class="signup-title">회원가입</div>
+			<div class="singup-subcontent">회원가입 진행 후 사이트를 이용해주시길 바랍니다.</div>
 		</div>
 		<div class="signup-form">
+			
+			<form method="post">
 			<table class="signup-form-content">
-				<tr>
-					<th>아이디</th>
+				<tr>	
+					<th><span>*</span>아이디</th>
 					<td><input type="text"></td>
 				</tr>
 				<tr>
-					<th>비밀번호</th>
+					<th><span>*</span>비밀번호</th>
 					<td><input type="text"></td>
 				</tr>
 				<tr>
-					<th>이름</th>
+					<th><span>*</span>이름</th>
 					<td><input type="text"></td>
 				</tr>
 				<tr>
-					<th>생년월일</th>
+					<th><span>*</span>생년월일</th>
 					<td><input type="date"></td>
 				</tr>
 				<tr>
@@ -42,7 +45,7 @@
 					<td><input type="text"></td>
 				</tr>
 				<tr>
-					<th>성별</th>
+					<th><span>*</span>성별</th>
 					<td>
 						<input type="radio" id="man" name="gender" value="1">남자
 						<input type="radio" id="woman" name="gender" value="2">여자
@@ -53,6 +56,11 @@
 					<td><input type="text"></td>
 				</tr>
 			</table>
+			<div class="write-btn">
+				<button type="submit" class="complete-btn">가입하기</button>
+				<button type="button" class="cancel-btn">돌아가기</button>
+			</div>
+			</form>
 		</div>
 	</div>
 	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>
