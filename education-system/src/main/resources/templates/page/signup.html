@@ -18,43 +18,43 @@
 		</div>
 		<div class="signup-form">
 			
-			<form method="post">
+			<form method="POST" action="/signupok">
 			<table class="signup-form-content">
 				<tr>	
 					<th><span>*</span>아이디</th>
-					<td><input type="text"></td>
+					<td><input type="text" id="userid" name="userid"></td>
 				</tr>
 				<tr>
 					<th><span>*</span>비밀번호</th>
-					<td><input type="text"></td>
+					<td><input type="password" id="password" name="password"></td>
 				</tr>
 				<tr>
 					<th><span>*</span>이름</th>
-					<td><input type="text"></td>
+					<td><input type="text" id="name" name="name"></td>
 				</tr>
 				<tr>
 					<th><span>*</span>생년월일</th>
-					<td><input type="date"></td>
+					<td><input type="date" id="birth" name="birth"></td>
 				</tr>
 				<tr>
-					<th>연락처</th>
-					<td><input type="text"></td>
+					<th><span>*</span>연락처</th>
+					<td><input type="text" id="phone" name="phone"></td>
 				</tr>
-				<tr>
+<!--				<tr>
 					<th>이메일</th>
 					<td><input type="text"></td>
-				</tr>
+				</tr>-->
 				<tr>
 					<th><span>*</span>성별</th>
 					<td>
-						<input type="radio" id="man" name="gender" value="1">남자
-						<input type="radio" id="woman" name="gender" value="2">여자
+						<input type="radio" id="man" name="gender" value="m">남자
+						<input type="radio" id="woman" name="gender" value="f">여자
 					</td>
 				</tr>
-				<tr>
+<!--				<tr>
 					<th>주소</th>
 					<td><input type="text"></td>
-				</tr>
+				</tr>-->
 			</table>
 			<div class="write-btn">
 				<button type="submit" class="complete-btn">가입하기</button>

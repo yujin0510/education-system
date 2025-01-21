@@ -56,3 +56,19 @@ CREATE TABLE chatList (
 
 
 commit;
+
+--교육생 계정 
+create sequence seqMember;
+ --drop table member;
+
+CREATE TABLE member (
+	seq	number	PRIMARY KEY,
+	userid	varchar2(500)	NOT NULL,
+	password	varchar2(500)	NOT NULL,
+	permission	char(1)	NOT NULL,   --권한(0:사용자, 1:관리자)
+	name	varchar2(30)	NOT NULL,
+	birth	date	NOT NULL,
+	gender	char(1)	NOT NULL,
+	phone	varchar2(30)	NOT NULL,
+	status	char(1)	NOT NULL        --탈퇴여부(0:탈퇴, 1:회원)
+);
