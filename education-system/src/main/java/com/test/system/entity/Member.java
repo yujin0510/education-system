@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,9 +26,10 @@ import lombok.ToString;
 public class Member {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqMember_genderator")
+	@SequenceGenerator(name = "seqMember_genderator", sequenceName = "seqMember", allocationSize = 1)
 	@Column(name = "seq", nullable = false)
-	private Integer seq;
+	private Long seq;
 	
 	@Column(nullable = false, unique = true)
 	private String userid;
