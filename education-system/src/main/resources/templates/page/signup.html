@@ -57,14 +57,60 @@
 				</tr>-->
 			</table>
 			<div class="write-btn">
-				<button type="submit" class="complete-btn">가입하기</button>
-				<button type="button" class="cancel-btn">돌아가기</button>
+				<button type="submit" class="complete-btn" onclick="return inputValue();">가입하기</button>
+				<button type="button" class="cancel-btn" onclick="location.href='/'">돌아가기</button>
 			</div>
 			</form>
 		</div>
 	</div>
 	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>
 	<script th:src="@{js/main.js}"></script>
+	<script>
+		
+		//회원가입 중 입력안한 항목이 있을 경우 알림창 띄우기 
+		function inputValue() {
+			const inputId = document.getElementById("userid");
+			const inputPassword = document.getElementById("password");
+			const inputName = document.getElementById("name");
+			const inputBirth = document.getElementById("birth");
+			const inputPhone = document.getElementById("phone");
+			const inputGender = document.getElementById("gender");
+			
+			if (inputId.value.trim() === "") {
+				alert("아이디를 입력해주세요.")
+				return false;
+			}
+			
+			if (inputPassword.value.trim() === "") {
+				alert("비밀번호를 입력해주세요.")
+				return false;
+			}
+			
+			if (inputName.value.trim() === "") {
+				alert("이름을 입력해주세요.")
+				return false;
+			}
+			
+			if (!inputBirth.value) {
+				alert("생년월일을 선택해주세요.")
+				return false;
+			}
+			
+			if (inputPhone.value.trim() === "") {
+				alert("전화번호를 입력해주세요.")
+				return false;
+			}
+
+			if (inputGender.value.trim() === "") {
+				alert("성별을 입력해주세요.")
+				return false;
+			}
+			
+			return true;
+			
+		}
+		
+	</script>
 	
 </body>
 </html>
