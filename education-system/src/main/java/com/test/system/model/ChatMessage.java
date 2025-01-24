@@ -11,4 +11,6 @@ public class ChatMessage {
 	}
 	private MessageType type;
     private String contents;
+    private String sender; 
+    private String timestamp; 
 }
