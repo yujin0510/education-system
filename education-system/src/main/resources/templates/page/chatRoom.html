@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+   <th:block th:insert="~{inc/index.html :: index_css}"></th:block>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+	<div>
+		<div>
+			<div class="group">
+				<label>대화명</label>
+				<input type="text" name="name" id="name" class="short">
+			</div>
+		</div>
+		<div>
+			<button type="button" class="in">들어가기</button>
+			<button type="button" class="in" data-name="강아지">들어가기(강아지)</button>
+			<button type="button" class="in" data-name="고양이">들어가기(고양이)</button>
+			<button type="button" class="in" data-name="병아리">들어가기(병아리)</button>
+		</div>
+	</div>
+
+
+</body>
+<script>
+    $(document).ready(function() {
+        $(".in").on("click", function() {
+            var name = $(this).data("name");  // 클릭된 버튼의 data-name 값 가져오기
+            // 'chat' 경로로 이동하면서 data-name 값을 쿼리 파라미터로 전달
+            window.location.href = "/chat?name=" + encodeURIComponent(name);
+        });
+    });
+</script>
+
+
+</html>

@@ -1,9 +1,25 @@
 show user;
 
 // 계정생성
-create user c##education identified by java1234;
-grant connect, resource, dba to c##education;
+--create user c##education identified by java1234;
+--grant connect, resource, dba to c##education;
 
+
+--교육생 계정 
+create sequence seqMember;
+ --drop table member;
+
+CREATE TABLE member (
+	seq	number	PRIMARY KEY,
+	userid	varchar2(500)	NOT NULL,
+	password	varchar2(500)	NOT NULL,
+	permission	char(1)	NOT NULL,   --권한(0:사용자, 1:관리자)
+	name	varchar2(30)	NOT NULL,
+	birth	date	NOT NULL,
+	gender	char(1)	NOT NULL,
+	phone	varchar2(30)	NOT NULL,
+	status	char(1)	NOT NULL        --탈퇴여부(0:탈퇴, 1:회원)
+);
 
 create sequence seqBoard;
 -- drop sequence seqBoard;
@@ -15,8 +31,8 @@ CREATE TABLE board (
     content VARCHAR2(4000) NOT NULL,
     creationDate date DEFAULT SYSDATE NOT NULL,
     modificationDate date DEFAULT SYSDATE NULL,
-    count NUMBER NOT NULL
-    --,CONSTRAINT fk_board_member FOREIGN KEY (member_seq) REFERENCES member(seq)
+    count NUMBER NOT NULL,
+    CONSTRAINT fk_board_member FOREIGN KEY (member_seq) REFERENCES member(seq)
 );
 
 
@@ -46,7 +62,7 @@ CREATE TABLE chatList (
 	member_seq	number	NOT NULL,
 	chat_seq	number	NOT NULL,
 	class_seq	number	NOT NULL
-    --,CONSTRAINT fk_chatList_member FOREIGN KEY (member_seq) REFERENCES member(seq)
+    ,CONSTRAINT fk_chatList_member FOREIGN KEY (member_seq) REFERENCES member(seq)
     ,CONSTRAINT fk_chatList_chat FOREIGN KEY (chat_seq) REFERENCES chat(seq)
     ,CONSTRAINT fk_chatList_class FOREIGN KEY (class_seq) REFERENCES class(seq)
 );

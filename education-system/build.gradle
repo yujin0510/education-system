@@ -52,6 +52,5 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-tasks.withType(JavaCompile).configureEach {
-    options.compilerArgs << "-parameters"
-}
+
+

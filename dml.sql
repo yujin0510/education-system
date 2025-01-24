@@ -17,4 +17,8 @@ insert into class(seq, className) values(seqClass.nextVal, 'Full-stack 개발자
 insert into class(seq, className) values(seqClass.nextVal, 'Mobile 개발자 과정A');
 --update class set className = '' where seq = 1;
 
+--member
+select * from member;
+insert into member(seq, userid, password, permission, name, birth, gender, phone, status) 
+values(seqMember.nextVal, 'hong1234', 'hong1111', '0', '홍길동', TO_DATE('1995-04-08', 'YYYY-MM-DD'), 'm', '01012345678', '1');
 
