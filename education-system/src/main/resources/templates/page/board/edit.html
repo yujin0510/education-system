@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Education-System</title>
+	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<th:block th:insert="~{inc/header.html :: menu}"></th:block>
+	<h1>board</h1>
+	<h1>게시판 상세보기</h1>
+	<table class="vertical" id="view">
+		<tr>
+			<th>번호</th>
+			<td>1</td>
+		</tr>
+		<tr>
+			<th>이름</th>
+			<td>이름 1</td>
+		</tr>
+		<tr>
+			<th>날짜</th>
+			<td>날짜 1</td>
+		</tr>
+		<tr>
+			<th>제목</th>
+			<td><input type="text" name="subject" id="subject" required class="full" value="수정될 내용"></td>
+		</tr>
+		<tr>
+			<th>내용</th>
+			<td><textarea name="content" id="content" required class="full">수정될 내용</textarea></td>
+		</tr>
+
+
+	</table>
+
+	<div>
+		<!-- 상세보기 > 수정하기로 들어옴 -->
+		<button type="button" class="back"
+			onclick="location.href='/board';">돌아가기</button>
+		<button type="submit" class="edit primary">수정하기</button>
+
+	</div>
+
+
+	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>
+</body>
+
+</html>

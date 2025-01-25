@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Education-System</title>
+	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<th:block th:insert="~{inc/header.html :: menu}"></th:block>
+	<h1>board</h1>
+	<h1>게시판 상세보기</h1>
+	<table class="vertical" id="view">
+		<tr>
+			<th>번호</th>
+			<td>1</td>
+			<th>이름</th>
+			<td>이름 1</td>
+		</tr>
+		<tr>
+			<th>날짜</th>
+			<td>날짜 1</td>
+			<th>조회수</th>
+			<td>조회수 1</td>
+		</tr>
+		<tr>
+			<th>제목</th>
+			<td colspan="3">제목 1</td>
+		</tr>
+		<tr>
+			<th>내용</th>
+			<td colspan="3">내용 1</td>
+		</tr>
+
+
+	</table>
+
+	<table id="addComment">
+		<tr>
+			<td><input type="text" name="content" class="full" required></td>
+			<td><button type="button" class="comment" id="btnAddComment">댓글 쓰기</button></td>
+		</tr>
+	</table>
+
+	<button type="button" class="back" onclick="location.href='/board'">돌아가기</button>
+
+	<!-- 캐시를 읽는거라 서버를 안읽어서 > 자기 하드디스크 자료를 봄 > 실시간 연동이 안됌 -->
+	<!-- 업데이트에 따라서 선택하는게 좋음 > 한달에 한번 올라오는 경우 history -->
+	<!-- <button type="button" class="back" onclick="history.back();">돌아가기</button> -->
+
+
+
+	<button type="button" class="edit"
+		onclick="location.href='/board/edit';">수정하기</button>
+	<button type="button" class="del" onclick="location.href='/board/del';">삭제하기</button>
+
+	<button type="button" class="reply"
+		onclick="location.href='/board/reply';">답변하기</button>
+
+
+
+
+	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>
+</body>
+
+</html>

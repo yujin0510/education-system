@@ -21,6 +21,31 @@ public class BoardController {
 		user.put("phone", "01012345678");
 		model.addAttribute("userDTO", user);
 		
-		return "page/board";
+		return "page/board/board";
+	}
+	
+	
+	@GetMapping("/board/view")
+	public String view(Model model) {
+		
+		return "page/board/view";
+	}
+	
+	@GetMapping("/board/add")
+	public String add(Model model) {
+		
+		return "page/board/add";
+	}
+	
+	@GetMapping("/board/edit")
+	public String edit(Model model) {
+		
+		return "page/board/edit";
+	}
+	
+	@GetMapping("/board/del")
+	public String del(Model model) {
+		
+		return "page/board/del";
 	}
 }
