@@ -32,7 +32,7 @@ public class Member {
 	private Long seq;
 	
 	@Column(nullable = false, unique = true)
-	private String userid;
+	private String username;
 	@Column(nullable = false)
 	private String password;
 	@Column(nullable = false)

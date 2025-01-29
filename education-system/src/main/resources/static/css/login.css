@@ -86,7 +86,9 @@ table td, table th {
 	margin: 2% 0;
 }
 
-
+form {
+	display: contents;
+}
 
 
 
