@@ -17,13 +17,19 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.headers((headerConfig) -> headerConfig.frameOptions((frameOptionConfig -> frameOptionConfig.disable())));
 
-		http.authorizeHttpRequests((auth) -> auth.requestMatchers("/**","/chatService").permitAll().anyRequest().authenticated());
+		http.authorizeHttpRequests((auth) -> auth
+										.requestMatchers("/").permitAll()
+										.requestMatchers("/login").permitAll()
+										.requestMatchers("/signup", "signupok").permitAll()
+										.anyRequest().authenticated()
+										//.requestMatchers("/**","/chatService").permitAll().anyRequest().authenticated()
+				);
 
 		
-		http.csrf(csrf -> csrf.ignoringRequestMatchers("/**"));
+		//http.csrf(csrf -> csrf.ignoringRequestMatchers("/**"));
 
 		
-		http.csrf(auth -> auth.disable());
+		//http.csrf(auth -> auth.disable());
 		
 		http.formLogin(auth -> auth
 									.loginPage("/login")
@@ -38,4 +44,12 @@ public class SecurityConfig {
 		
 		return new BCryptPasswordEncoder();
 	}
+	/*
+	 * @Bean public SecurityFilterChain securityFilterChain(HttpSecurity http)
+	 * throws Exception {
+	 * 
+	 * http.logout(auth -> auth .logoutUrl("/logout") .logoutSuccessUrl("/"));
+	 * 
+	 * return http.build(); }
+	 */
 }

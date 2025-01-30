@@ -27,7 +27,7 @@
 			<table class="login-form-content">
 				<tr>
 					<td class="userid">
-						<input type="text" name="username" placeholder="Id">
+						<input type="text" name="username" placeholder="ID">
 					</td>
 				</tr>
 				<tr>
@@ -37,7 +37,7 @@
 				</tr>
 			</table>
 			<button class="login-btn">로그인</button>
-			
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
 			</form>
 			<div class="signup">
 				<span>이메일로 가입하셨나요?</span>
