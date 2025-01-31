@@ -6,7 +6,7 @@ import com.test.system.entity.Member;
 import java.util.List;
 
 
-public interface MemberRepository extends JpaRepository<Member, Long> {
+public interface MemberRepository extends JpaRepository<Member, Integer> {
 
 	boolean existsByUsername(String username);
 	

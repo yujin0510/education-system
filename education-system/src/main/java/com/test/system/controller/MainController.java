@@ -12,14 +12,14 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MainController {
 	@GetMapping("/")
-	public String board(Model model) {
-		
-		HashMap<String, String> user = new HashMap<String, String>();
-		user.put("username", "test@test.com");
-		user.put("password", "java1234");
-		user.put("phone", "01012345678");
-		model.addAttribute("userDTO", user);
-		
+	public String board() {
+
 		return "page/main";
+	}
+	
+	@GetMapping("/my")
+	public String my() {
+
+		return "page/my";
 	}
 }

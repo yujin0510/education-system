@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<title>교육센터</title>
+	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
+	<link rel="stylesheet" th:href="@{css/main.css}" />
+	<style>
+		
+	</style>
+</head>
+<body>
+	<th:block th:insert="~{inc/header.html :: menu}"></th:block>
+	<h1>My</h1>
+	<div>마이 페이지</div>
+	<div>이메일 로그인</div>
+	<div>id : <span sec:authentication="principal.member.username"></span></div>
+
+	
+	<hr>
+	
+	<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>
+	<script th:src="@{js/main.js}"></script>
+	
+</body>
+</html>
