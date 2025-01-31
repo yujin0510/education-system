@@ -11,7 +11,7 @@ create sequence seqMember;
 
 CREATE TABLE member (
 	seq	number	PRIMARY KEY,
-	userid	varchar2(500)	NOT NULL,
+	username 	varchar2(500)	NOT NULL,
 	password	varchar2(500)	NOT NULL,
 	permission	char(1)	NOT NULL,   --권한(0:사용자, 1:관리자)
 	name	varchar2(30)	NOT NULL,
