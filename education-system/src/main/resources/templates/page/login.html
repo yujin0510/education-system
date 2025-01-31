@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" 
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 	<meta charset="UTF-8">
 	<title>Education-System</title>
@@ -27,17 +28,17 @@
 			<table class="login-form-content">
 				<tr>
 					<td class="userid">
-						<input type="text" name="username" placeholder="ID">
+						<input type="text" name="username" placeholder="ID" value="test">
 					</td>
 				</tr>
 				<tr>
 					<td class="userpassword">
-						<input type="password" name="password" placeholder="Password">
+						<input type="password" name="password" placeholder="Password" value="test1">
 					</td>
 				</tr>
 			</table>
 			<button class="login-btn">로그인</button>
-			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
 		</form>
 			<div class="signup">
 				<span>이메일로 가입하셨나요?</span>

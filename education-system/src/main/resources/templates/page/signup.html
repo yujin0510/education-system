@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Education-System</title>
 	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
-	<link rel="stylesheet" th:href="@{css/signup.css}">
+	<!--<link rel="stylesheet" th:href="@{css/signup.css}">-->
 	<style>
-		
+
 	</style>
 </head>
+
 <body>
 	<th:block th:insert="~{inc/header.html :: menu}"></th:block>
 	<div class="signup-container">
@@ -17,56 +19,58 @@
 			<div class="singup-subcontent">회원가입 진행 후 사이트를 이용해주시길 바랍니다.</div>
 		</div>
 		<div class="signup-form">
-			
+
 			<form method="POST" action="/signupok">
-			<table class="signup-form-content">
-				<tr>	
-					<th><span>*</span>아이디</th>
-					<td><input type="text" id="username" name="username"></td>
-				</tr>
-				<tr>
-					<th><span>*</span>비밀번호</th>
-					<td><input type="password" id="password" name="password"></td>
-				</tr>
-				<tr>
-					<th><span>*</span>이름</th>
-					<td><input type="text" id="name" name="name"></td>
-				</tr>
-				<tr>
-					<th><span>*</span>생년월일</th>
-					<td><input type="date" id="birth" name="birth"></td>
-				</tr>
-				<tr>
-					<th><span>*</span>연락처</th>
-					<td><input type="text" id="phone" name="phone"></td>
-				</tr>
-<!--				<tr>
+				<table class="signup-form-content">
+					<tr>
+						<th><span>*</span>아이디</th>
+						<td><input type="text" id="username" name="username" value="test123"></td>
+					</tr>
+					<tr>
+						<th><span>*</span>비밀번호</th>
+						<td><input type="password" id="password" name="password" value="test123"></td>
+					</tr>
+					<tr>
+						<th><span>*</span>이름</th>
+						<td><input type="text" id="name" name="name" value="test123"></td>
+					</tr>
+					<tr>
+						<th><span>*</span>생년월일</th>
+						<td><input type="date" id="birth" name="birth"></td>
+					</tr>
+					<tr>
+						<th><span>*</span>연락처</th>
+						<td><input type="text" id="phone" name="phone" value="01012345678"></td>
+					</tr>
+					<!--				<tr>
 					<th>이메일</th>
 					<td><input type="text"></td>
 				</tr>-->
-				<tr>
-					<th><span>*</span>성별</th>
-					<td>
-						<input type="radio" id="man" name="gender" value="m">남자
-						<input type="radio" id="woman" name="gender" value="f">여자
-					</td>
-				</tr>
-<!--				<tr>
+					<tr>
+						<th><span>*</span>성별</th>
+						<td>
+							<input type="radio" id="man" name="gender" value="m" checked>남자
+							<input type="radio" id="woman" name="gender" value="f">여자
+						</td>
+					</tr>
+					<!--				<tr>
 					<th>주소</th>
 					<td><input type="text"></td>
 				</tr>-->
-			</table>
-			<div class="write-btn">
-				<button type="submit" class="complete-btn" onclick="return inputValue();">가입하기</button>
-				<button type="button" class="cancel-btn" onclick="location.href='/'">돌아가기</button>
-			</div>
+				</table>
+				<div class="write-btn">
+					<button type="submit" class="complete-btn" onclick="return inputValue();">가입하기</button>
+					<button type="button" class="cancel-btn" onclick="location.href='/'">돌아가기</button>
+				</div>
+				<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
 			</form>
 		</div>
 	</div>
 	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>
-	<script th:src="@{js/main.js}"></script>
+	<!--<script th:src="@{js/main.js}"></script>-->
 	<script>
-		
+
 		//회원가입 중 입력안한 항목이 있을 경우 알림창 띄우기 
 		/*
 		function inputValue() {
@@ -112,11 +116,7 @@
 		}
 		*/
 	</script>
-	
+
 </body>
+
 </html>
-
-
-
-
-

@@ -20,7 +20,7 @@ public class SecurityConfig {
 		http.authorizeHttpRequests((auth) -> auth
 										.requestMatchers("/").permitAll()
 										.requestMatchers("/login").permitAll()
-										.requestMatchers("/signup", "signupok").permitAll()
+										.requestMatchers("/signup", "/signupok").permitAll()
 										.anyRequest().authenticated()
 										//.requestMatchers("/**","/chatService").permitAll().anyRequest().authenticated()
 				);

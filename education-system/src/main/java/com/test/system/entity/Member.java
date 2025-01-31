@@ -48,4 +48,10 @@ public class Member {
 	@Column(nullable = false)
 	private String status;
 	
+	public void updatePassword(String password) {
+		this.password = password;
+		
+	}
+	
+	
 }//member
