@@ -18,11 +18,9 @@ public class SecurityConfig {
 		http.headers((headerConfig) -> headerConfig.frameOptions((frameOptionConfig -> frameOptionConfig.disable())));
 
 		http.authorizeHttpRequests((auth) -> auth
-										.requestMatchers("/").permitAll()
-										.requestMatchers("/login").permitAll()
-										.requestMatchers("/signup", "/signupok").permitAll()
+										.requestMatchers("/", "/login", "/signup", "/signupok").permitAll()
+										.requestMatchers("/board", "/board/view/**").permitAll()
 										.anyRequest().authenticated()
-										//.requestMatchers("/**","/chatService").permitAll().anyRequest().authenticated()
 				);
 
 		

@@ -6,7 +6,52 @@
 	<title>Education-System</title>
 	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
 	<style>
+		table {
+			table-layout: fixed;
+			width: 770px;
+		}
 
+		td {
+			text-align: center;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		table tr th:nth-child(1) {
+			width: 60px;
+		}
+
+		table tr th:nth-child(2) {
+			width: auto;
+		}
+
+		table tr td:nth-child(2) {
+			text-align: start;
+		}
+
+		table tr th:nth-child(3) {
+			width: 170px;
+		}
+
+		table tr th:nth-child(4) {
+			width: 175px;
+		}
+
+		table tr th:nth-child(5) {
+			width: 70px;
+		}
+
+		#search {
+			width: 600px;
+			margin: auto;
+		}
+
+
+		#add {
+			width: 75px;
+			margin-left: auto
+		}
 	</style>
 </head>
 
@@ -14,45 +59,56 @@
 	<th:block th:insert="~{inc/header.html :: menu}"></th:block>
 	<h1>board</h1>
 	<h1>게시판 페이지</h1>
-	<table id="list">
-		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>이름</th>
-			<th>날짜</th>
-			<th>읽음 수</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td><a href="/board/view">제목 1</a></td>
-			<td>이름 1</td>
-			<td>날짜 1</td>
-			<td>123</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td><a href="/board/view">제목 1</a></td>
-			<td>이름 2</td>
-			<td>날짜 2</td>
-			<td>123</td>
-		</tr>
-	</table>
-	<select name="column">
-		<!-- 검색 정확도 높아지고, SQL 부담 줄어듬 -->
-		<!-- 사용자는 광범위한게 더 편하긴 함 -->
-		<option value="subject">제목</option>
-		<option value="content">내용</option>
-		<option value="name">이름</option>
-		<option value="all">제목/내용/이름</option>
-	</select>
-	<input type="text" name="word" class="long" required>
-	<input type="submit" value="검색하기">
-
-	<div>
-
+	<div id="add">
 		<button type="button" class="add primary" onclick="location.href='/board/add';">쓰기</button>
-
 	</div>
+	<th:block th:if="${list.size() > 0}">
+		<table id="list">
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>날짜</th>
+				<th>조회수</th>
+			</tr>
+			<tr th:each="board : ${list}">
+				<td>
+					<th:block th:text="${board.seq}"></th:block>
+				</td>
+				<td><a th:href="'/board/view?seq=' + ${board.seq}" th:text="${board.title}">
+					</a>
+				<td>
+					<th:block th:text="${board.memberSeq}"></th:block>
+				</td>
+				<td>
+					<th:block th:text="${board.date}"></th:block>
+				</td>
+				<td>
+					<th:block th:text="${board.count}"></th:block>
+				</td>
+			</tr>
+
+		</table>
+		<div id=search>
+			<select name="column">
+				<!-- 검색 정확도 높아지고, SQL 부담 줄어듬 -->
+				<!-- 사용자는 광범위한게 더 편하긴 함 -->
+				<option value="subject">제목</option>
+				<option value="content">내용</option>
+				<option value="name">이름</option>
+				<option value="all">제목/내용/이름</option>
+			</select>
+			<input type="text" name="word" class="long" required>
+			<input type="submit" value="검색하기">
+		</div>
+
+
+	</th:block>
+	<th:block th:if="${list.size() == 0}">
+		<div>게시물이 없습니다.</div>
+	</th:block>
+
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<th:block th:insert="~{inc/index.html :: index_js}"></th:block>
 </body>
 

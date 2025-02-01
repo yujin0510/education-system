@@ -1,7 +1,5 @@
 package com.test.system.model;
 
-import java.util.List;
-
 import lombok.Data;
 
 @Data
@@ -16,4 +14,6 @@ public class ChatMessage {
     private String sender; 
     private String timestamp; 
     private String code; 
+    private String num; 
 }
+

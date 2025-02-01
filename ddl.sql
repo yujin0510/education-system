@@ -24,17 +24,18 @@ CREATE TABLE member (
 create sequence seqBoard;
 -- drop sequence seqBoard;
 -- drop table board;
+-- delete from board;
 CREATE TABLE board (
     seq NUMBER PRIMARY KEY,
     member_seq NUMBER NOT NULL,
     title VARCHAR2(1000) NOT NULL,
     content VARCHAR2(4000) NOT NULL,
-    creationDate date DEFAULT SYSDATE NOT NULL,
+    creationDate date DEFAULT TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') NOT NULL,
     modificationDate date DEFAULT SYSDATE NULL,
-    count NUMBER NOT NULL,
+    count NUMBER DEFAULT 0 NOT NULL,
     CONSTRAINT fk_board_member FOREIGN KEY (member_seq) REFERENCES member(seq)
 );
-
+commit;
 
 create sequence seqClass;
 -- drop sequence seqClass;

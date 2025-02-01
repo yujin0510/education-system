@@ -17,23 +17,23 @@
 	<table class="vertical" id="view">
 		<tr>
 			<th>번호</th>
-			<td>1</td>
+			<td th:text="${dto.seq}"></td>
 			<th>이름</th>
-			<td>이름 1</td>
+			<td th:text="${dto.memberSeq}"></td>
 		</tr>
 		<tr>
 			<th>날짜</th>
-			<td>날짜 1</td>
+			<td th:text="${dto.date}"></td>
 			<th>조회수</th>
-			<td>조회수 1</td>
+			<td th:text="${dto.count}"></td>
 		</tr>
 		<tr>
 			<th>제목</th>
-			<td colspan="3">제목 1</td>
+			<td colspan="3" th:text="${dto.title}"></td>
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td colspan="3">내용 1</td>
+			<td colspan="3" th:text="${dto.content}"></td>
 		</tr>
 
 

@@ -20,7 +20,7 @@ public class ChatController {
         this.template = template;
     }
 
-    @MessageMapping("/test") // 메세지 전송
+    @MessageMapping("/message") // 메세지 전송
     public void sendMessage(ChatMessage message) throws Exception {
         Thread.sleep(1000); // simulated delay
         template.convertAndSend("/sub", message); // 구독한 채팅방으로 메세지 전송

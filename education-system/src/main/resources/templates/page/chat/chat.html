@@ -109,13 +109,24 @@
 			/* 폰트 색상 변경 */
 			text-align: center;
 		}
+
+		img {
+			width: 15px;
+		}
 	</style>
 </head>
 
 <body>
 	<th:block th:insert="~{inc/header.html :: menu}"></th:block>
 	<div class="messageBox">
-		<div id="class">JAVA Full-Stack <span id="username"></span></div>
+		<div id="class">
+			JAVA Full-Stack
+			<span id="username">
+				<th:block sec:authentication="principal.member.username"></th:block>
+			</span>
+			<img src="img/user.png">
+			<span id="userNum"></span>
+		</div>
 		<div id="messages"></div>
 		<div class="messageInputBox">
 			<input type="text" id="messageInput" placeholder="메시지를 입력하세요" />
@@ -129,23 +140,30 @@
 		const stompClient = Stomp.over(socket);
 
 		// 사용자 이름 입력 받기
-		const username = prompt("Enter your name: ");
-		document.getElementById('username').textContent = username; // username 표시
+		let username = document.getElementById('username').textContent;
+
+		// 현재 사용자 수
+		let n = 0;
 
 		// 메시지 입력란에 자동으로 커서 위치
 		document.getElementById('messageInput').focus();
 
 		// 접속 후 사용자 이름 설정
 		stompClient.connect({}, function (frame) {
+			// 사람 수 증가
+			n = n + 1;
+			console.log(">>>>>>................>" + n);
+
 			console.log('Connected: ' + frame);
 
 			// 최초 메시지 전송 (채팅 입장)
-			stompClient.send("/pub/test", {}, JSON.stringify({
+			stompClient.send("/pub/message", {}, JSON.stringify({
 				type: "SEND", // 고정된 타입
 				contents: username + "님이 채팅에 입장했습니다.", // 입장 메시지
 				sender: username,
 				timestamp: new Date().toLocaleTimeString(),
-				code : 1
+				code: 1,
+				num: n
 			}));
 
 			// 메시지 수신
@@ -153,23 +171,31 @@
 				let receivedMessage = JSON.parse(message.body); // 메시지 파싱
 				displayMessage(receivedMessage); // 화면에 메시지 표시
 			});
+
+			console.log(">>>>>>................>" + n);
 		});
 
 		// 페이지를 떠날 때 퇴장 메시지 전송
 		window.addEventListener('beforeunload', function () {
-		    // 퇴장 메시지 먼저 전송
-		    stompClient.send("/pub/test", {}, JSON.stringify({
-		        type: "SEND", // 고정된 타입
-		        contents: username + "님이 채팅에 퇴장했습니다.", // 퇴장 메시지
-		        sender: username,
-		        timestamp: new Date().toLocaleTimeString()				,
-				code : 2
-		    }));
 
-		    // 연결 종료
-		    stompClient.disconnect(function () {
-		        console.log("Disconnected from server.");
-		    });
+			// 사람 수 감소
+			n = n - 1;
+			// 퇴장 메시지 먼저 전송
+			stompClient.send("/pub/message", {}, JSON.stringify({
+				type: "SEND", // 고정된 타입
+				contents: username + "님이 채팅에 퇴장했습니다.", // 퇴장 메시지
+				sender: username,
+				timestamp: new Date().toLocaleTimeString(),
+				code: 2,
+				num: n
+			}));
+
+			// 연결 종료
+			stompClient.disconnect(function () {
+				console.log("Disconnected from server.");
+			});
+
+			console.log(">>>>>>>" + n);
 		});
 
 		// 메시지 전송 버튼 클릭 시
@@ -192,9 +218,9 @@
 				contents: contents, // 입력된 내용
 				sender: username,
 				timestamp: new Date().toLocaleTimeString(),
-				code : 3
+				code: 3
 			};
-			stompClient.send("/pub/test", {}, JSON.stringify(message)); // 메시지 전송 경로
+			stompClient.send("/pub/message", {}, JSON.stringify(message)); // 메시지 전송 경로
 			document.getElementById('messageInput').value = ''; // 입력 필드 초기화
 		}
 
@@ -219,14 +245,15 @@
 			let messageText = document.createElement('div');
 			messageText.classList.add('messageText');
 			messageText.textContent = contents;
+			document.getElementById('userNum').textContent = n;
 
 			// 입장/퇴장 메시지 처리
-			if (code == 1||code == 2) {
+			if (code == 1 || code == 2) {
 				messageMeta.textContent = ''; // timestamp와 sender를 숨김
 				messageText.classList.add('enter-message'); // 입장/퇴장 메시지 스타일 적용
 
 				console.log("Enter/Exit message detected:", contents); // 디버깅용 로그 추가
-			} else if (code == 3){
+			} else if (code == 3) {
 				messageMeta.textContent = `${sender} (${timestamp})`; // 보낸 사람과 발송 시간 표시
 			}
 

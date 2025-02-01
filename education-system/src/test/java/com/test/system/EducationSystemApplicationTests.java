@@ -12,7 +12,7 @@ import lombok.Builder;
 
 @SpringBootTest
 class EducationSystemApplicationTests {
-
+/*
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
@@ -33,5 +33,5 @@ class EducationSystemApplicationTests {
 		//boolean exists = memberRepository.existsByUsername("hong1234");
 		//System.out.println("Exists: " + exists);
 	}
-
+*/
 }

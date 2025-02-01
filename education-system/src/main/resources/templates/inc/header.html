@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html 
-	xmlns:th="http://www.thymeleaf.org" 
-	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
 	<meta charset="UTF-8">
 	<title>교육센터</title>
 	<th:block th:insert="~{inc/index.html :: index_css}"></th:block>
-	
+
 	<style>
 
 	</style>
@@ -18,13 +16,17 @@
 	<header th:fragment="menu">
 		<ul id="headerMenu">
 			<li><a href="/">Main</a></li>
-			<li><a href="/signup">Sign Up</a></li>
-			<li><a href="/login">Login</a></li>
-			<li><a href="/logout">LogOut</a></li>
-			<li><a href="/my">My Page</a></li>
-			<li><a href="/admin">Admin Page</a></li>
-			<li><a href="/board">Board</a></li>
-			<li><a href="/chatting">Chat</a></li>
+			<th:block sec:authorize="isAnonymous()">
+				<li><a href="/signup">Sign Up</a></li>
+				<li><a href="/login">Login</a></li>
+			</th:block>
+			<th:block sec:authorize="isAuthenticated()">
+				<li><a href="/logout">LogOut</a></li>
+				<li><a href="/my">My Page</a></li>
+				<li><a href="/admin">Admin Page</a></li>
+				<li><a href="/chatting">Chat</a></li>
+			</th:block>
+				<li><a href="/board">Board</a></li>
 		</ul>
 	</header>
 
