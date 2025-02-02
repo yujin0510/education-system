@@ -28,12 +28,12 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 			<table class="login-form-content">
 				<tr>
 					<td class="userid">
-						<input type="text" name="username" placeholder="ID" value="test">
+						<input type="text" name="username" placeholder="ID" value="test123">
 					</td>
 				</tr>
 				<tr>
 					<td class="userpassword">
-						<input type="password" name="password" placeholder="Password" value="test1">
+						<input type="password" name="password" placeholder="Password" value="test123">
 					</td>
 				</tr>
 			</table>
@@ -42,7 +42,8 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 		</form>
 			<div class="signup">
 				<span>이메일로 가입하셨나요?</span>
-				<button class="email-login-btn">이메일로 로그인하기</button>
+				<!--<button class="email-login-btn">이메일로 로그인하기</button>-->
+				<a href="/oauth2/authorization/google">구글 로그인</a>
 				<span>아직 회원이 아니신가요?</span>
 				<button class="signup-btn" onclick="location.href='/signup'">회원가입</button>
 			</div>

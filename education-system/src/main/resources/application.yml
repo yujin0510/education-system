@@ -24,6 +24,18 @@ spring:
      hibernate:
        format_sql: true #SQL을 이쁘게
 
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-name: google  
+            client-id: #본인 구글 API아이디
+            client-secret: #본인 구글 API키
+            redirect-uri: http://localhost:8090/login/oauth2/code/google
+            authorization-grant-type: authorization_code
+            scope: profile, email
+
 server:
   port: 8090    
 
