@@ -43,8 +43,7 @@ public class BoardController {
 		}
 		
 		Optional<Board> dto = boardRepository.findById(seq);
-		BoardDTO dtoDate = boardService.date(dto.get().toDTO());
-		System.out.println(">>>>"+ dtoDate);
+		BoardDTO dtoDate = boardService.fullDate(dto.get().toDTO());
 		model.addAttribute("dto", dtoDate);
 		
 		return "page/board/view";

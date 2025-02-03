@@ -1,14 +1,6 @@
 package com.test.system;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
-import com.test.system.entity.Member;
-import com.test.system.repository.MemberRepository;
-
-import lombok.Builder;
 
 @SpringBootTest
 class EducationSystemApplicationTests {

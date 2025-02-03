@@ -56,12 +56,20 @@ public class BoardService {
 	        dto.setDate(creationDateTime.toLocalTime().toString());
 	    } else {
 	        // 오늘 날짜가 아니라면 날짜와 시간을 모두 설정
-	        dto.setDate(creationDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+	        dto.setDate(creationDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 	    }
 
 	    return dto;  // 변경된 dto 반환
 	}
 
+	
+	public BoardDTO fullDate(BoardDTO dto) {
+	    LocalDateTime creationDateTime = dto.getCreationDate();  // BoardDTO에서 creationDate 가져오기
+
+	    dto.setDate(creationDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+
+	    return dto;  // 변경된 dto 반환
+	}
 
 }
 

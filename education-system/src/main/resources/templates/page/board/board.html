@@ -71,9 +71,9 @@
 				<th>날짜</th>
 				<th>조회수</th>
 			</tr>
-			<tr th:each="board : ${list}">
+			<tr th:each="board, stat : ${list}">
 				<td>
-					<th:block th:text="${board.seq}"></th:block>
+					<th:block th:text="${list.size() - stat.index}"></th:block>
 				</td>
 				<td><a th:href="'/board/view?seq=' + ${board.seq}" th:text="${board.title}">
 					</a>
