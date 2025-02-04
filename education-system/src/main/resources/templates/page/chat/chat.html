@@ -14,13 +14,17 @@
 	<th:block th:insert="~{inc/header.html :: menu}"></th:block>
 	<div class="messageBox">
 		<div id="class">
-			JAVA Full-Stack
+			<th:block th:each="member : ${list}">
+			    <th:block th:if="${member.username == #authentication.principal.member.username}">
+			        <span th:text="'[' + ${member.className} + ']'"></span>
+			    </th:block>
+			</th:block>
 			<span id="username" th:text="${#authentication.principal.member.username}"></span>
 			<!--
 			<img src="img/user.png">
 			<span id="userNum"></span>
 			-->
-		</div>
+		</th:block>
 		<div id="messages"></div>
 		<div class="messageInputBox">
 			<input type="text" id="messageInput" placeholder="메시지를 입력하세요" />

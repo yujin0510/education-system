@@ -47,4 +47,10 @@ public class CustomUserDetails implements UserDetails{
 		return member.getUsername();
 	}
 	
+	
+	public Long getSeq() {
+
+		return member.getSeq();
+	}
+	
 }

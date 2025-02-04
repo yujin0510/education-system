@@ -26,6 +26,9 @@ public class MemberDTO {
 	private String phone;
 	private String status;
 	
+	// 학생의 클래스명
+	private String className;
+	
 	public void setDefaultValue() {
 		this.permission = "0";
 		this.status = "1";

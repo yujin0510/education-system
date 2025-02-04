@@ -42,4 +42,6 @@ public class MemberService {
 		return dtoList;
 	}
 
+
+
 }

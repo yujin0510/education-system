@@ -7,10 +7,11 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.querydsl.core.Tuple;
+import com.test.system.entity.ViewClassName;
 import com.test.system.model.ChatMessage;
-import com.test.system.repository.ChatDSLRepository;
+import com.test.system.service.ChatService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ChatController {
     private final SimpMessagingTemplate template;
-    //private final ChatDSLRepository chatDSLRepository;
+    private final ChatService chatService;
     
 
     @MessageMapping("/message") // 메세지 전송
@@ -30,8 +31,10 @@ public class ChatController {
     @GetMapping("/chatting")
     public String chat(Model model) {
     	
-    	
-        return "page/chat/chat"; 
+    	List<ViewClassName> list= chatService.findAll();
+    	System.out.println(list);
+    	model.addAttribute("list",list);
+    	return "page/chat/chat"; 
     }
 
    
