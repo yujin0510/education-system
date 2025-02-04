@@ -23,3 +23,16 @@ select * from member;
 insert into member(seq, username, password, permission, name, birth, gender, phone, status) 
 values(seqMember.nextVal, 'hong1234', 'hong1111', '0', '홍길동', TO_DATE('1995-04-08', 'YYYY-MM-DD'), 'm', '01012345678', '1');
 commit;
+
+-- classList
+select * from classList;
+insert into classList(seq, member_seq, class_seq) values(seqClassList.nextVal, 21, 1);
+insert into classList(seq, member_seq, class_seq) values(seqClassList.nextVal, 22, 1);
+
+
+select c.className, m.username 
+from classList l 
+inner join  class c
+on l.class_seq = c.seq
+inner join member m
+on l.member_seq = m.seq;

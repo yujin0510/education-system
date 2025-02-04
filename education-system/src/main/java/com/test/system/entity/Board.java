@@ -60,9 +60,15 @@ public class Board {
 
 	public BoardDTO toDTO() {
 
-		return BoardDTO.builder().seq(this.getSeq()).memberSeq(this.getMemberSeq()).title(this.getTitle())
-				.content(this.getContent()).creationDate(this.getCreationDate())
-				.modificationDate(this.getModificationDate()).count(this.getCount()).build();
+		return BoardDTO.builder()
+				.seq(this.getSeq())
+				.memberSeq(this.getMemberSeq())
+				.title(this.getTitle())
+				.content(this.getContent())
+				.creationDate(this.getCreationDate())
+				.modificationDate(this.getModificationDate())
+				.count(this.getCount())
+				.build();
 	}
 
 }

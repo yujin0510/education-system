@@ -46,6 +46,21 @@ CREATE TABLE class (
 );
 
 
+create sequence seqClassList;
+-- drop sequence seqClassList;
+-- drop table classList;
+CREATE TABLE classList (
+	seq	number	PRIMARY KEY,
+	member_seq	number	NOT NULL,
+	class_seq	number	NOT NULL
+    ,CONSTRAINT fk_chatList_member FOREIGN KEY (member_seq) REFERENCES member(seq)
+    ,CONSTRAINT fk_chatList_class FOREIGN KEY (class_seq) REFERENCES class(seq)
+);
+
+
+
+
+
 create sequence seqChat;
 -- drop sequence seqChat;
 -- drop table chat;

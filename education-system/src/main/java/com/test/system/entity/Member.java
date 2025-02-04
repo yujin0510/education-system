@@ -1,13 +1,17 @@
 package com.test.system.entity;
 
 import java.time.LocalDate;
+import java.util.List;
+
+import com.test.system.model.MemberDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.PrePersist;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -52,6 +56,22 @@ public class Member {
 		this.password = password;
 		
 	}
+
+	public MemberDTO toDTO() {
+
+		return MemberDTO.builder()
+				.seq(this.getSeq())
+				.username(this.getUsername())
+				.password(this.getPassword())
+				.permission(this.getPermission())
+				.name(this.getName())
+				.birth(this.getBirth())
+				.gender(this.getGender())
+				.phone(this.getPhone())
+				.status(this.getStatus())
+				.build();
+	}
+	
 	
 	
 }//member

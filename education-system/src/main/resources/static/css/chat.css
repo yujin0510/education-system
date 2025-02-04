@@ -1,0 +1,105 @@
+/* 전체 메시지 박스 */
+		.messageBox {
+			display: flex;
+			flex-direction: column;
+			padding: 10px;
+			max-width: 400px;
+			margin: 0 auto;
+			border: 1px solid #777;
+			border-radius: 5px;
+			height: 500px;
+		}
+
+		/* 메시지 컨테이너 스타일 */
+		.message {
+			width: auto;
+			padding-top: 5px;
+			font-size: 14px;
+			border: none;
+			margin: 0;
+			background-color: transparent;
+		}
+
+		/* 일반 메시지 텍스트 */
+		.messageText {
+			background-color: #f1f1f1;
+			padding: 10px;
+			border-radius: 5px;
+			max-width: 85%;
+			margin: 5px 0;
+		}
+
+		/* 메시지 발송자 및 시간 */
+		.messageMeta {
+			font-size: 0.8em;
+			color: gray;
+			text-align: left;
+		}
+
+		/* 입장 메시지 스타일 */
+		.messageMeta.empty {
+			display: none;
+			/* 입장 메시지에는 sender와 timestamp 숨기기 */
+		}
+
+		/* 메시지 입력란 */
+		.messageInputBox {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 10px;
+		}
+
+		/* 입력 필드 */
+		#messageInput {
+			width: 70%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+
+		/* 전송 버튼 */
+		#sendButton {
+			border: none;
+			background-color: #007bff;
+			color: white;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 20%;
+		}
+
+		/* 메시지 박스 및 입력란 */
+		#messages {
+			overflow-y: auto;
+			margin-bottom: 10px;
+			height: 700px;
+		}
+
+		/* 기본적으로 입장 메시지에 대한 스타일을 비활성화 */
+		.messageBox .enterMessage {
+			display: none;
+		}
+
+		.messageBox .enterMessage.show {
+			display: block;
+			font-style: italic;
+			text-align: center;
+		}
+
+		/* 입장 메시지에 대한 스타일 */
+		.enter-message {
+			padding: 0;
+			/* 패딩 제거 */
+			margin: 0;
+			/* 마진 제거 */
+			background-color: transparent;
+			/* 배경색 제거 */
+			font-size: 1rem;
+			/* 폰트 크기 줄이기 */
+			color: #888;
+			/* 폰트 색상 변경 */
+			text-align: center;
+		}
+
+		img {
+			width: 15px;
+		}
