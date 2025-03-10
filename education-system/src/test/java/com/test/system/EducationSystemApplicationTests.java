@@ -20,8 +20,8 @@ class EducationSystemApplicationTests {
 	@Test
 	public void updataMemberPw() {
 		
-		Member member = memberRepository.findByUsername("test");
-		member.updatePassword(passwordEncoder.encode("test1"));
+		Member member = memberRepository.findByUsername("test123");
+		member.updatePassword(passwordEncoder.encode("test123"));
 		System.out.println(member);
 
 		

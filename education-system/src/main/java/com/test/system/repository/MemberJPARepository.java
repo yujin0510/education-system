@@ -1,6 +1,4 @@
 package com.test.system.repository;
-import static com.test.system.entity.QMember.member;
-
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -19,6 +17,7 @@ private final JPAQueryFactory jpaQueryFactory;
 	
 	public List<Member> findAll() {
 
-		return jpaQueryFactory.selectFrom(member).fetch();
+		return null;
+		//return jpaQueryFactory.selectFrom(member).fetch();
 	}
 }

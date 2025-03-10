@@ -23,14 +23,14 @@ CREATE TABLE member (
 
 create sequence seqBoard;
 -- drop sequence seqBoard;
--- drop table board;
+--drop table board;
 -- delete from board;
 CREATE TABLE board (
     seq NUMBER PRIMARY KEY,
     member_seq NUMBER NOT NULL,
     title VARCHAR2(1000) NOT NULL,
     content VARCHAR2(4000) NOT NULL,
-    creationDate date DEFAULT TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') NOT NULL,
+    creationDate date DEFAULT SYSDATE NOT NULL, --to char제거, sysdate를 직접 사용(sysdate는 이미 date타입이라 변환할 필요 없음)
     modificationDate date DEFAULT SYSDATE NULL,
     count NUMBER DEFAULT 0 NOT NULL,
     CONSTRAINT fk_board_member FOREIGN KEY (member_seq) REFERENCES member(seq)
@@ -47,14 +47,14 @@ CREATE TABLE class (
 
 
 create sequence seqClassList;
--- drop sequence seqClassList;
--- drop table classList;
+--drop sequence seqClassList;
+--drop table classList;
 CREATE TABLE classList (
 	seq	number	PRIMARY KEY,
 	member_seq	number	NOT NULL,
 	class_seq	number	NOT NULL
-    ,CONSTRAINT fk_chatList_member FOREIGN KEY (member_seq) REFERENCES member(seq)
-    ,CONSTRAINT fk_chatList_class FOREIGN KEY (class_seq) REFERENCES class(seq)
+    ,CONSTRAINT fk_classList_member FOREIGN KEY (member_seq) REFERENCES member(seq) --아래 chatList제약 조건이랑 이름이 겹쳐 수정
+    ,CONSTRAINT fk_classList_class FOREIGN KEY (class_seq) REFERENCES class(seq)
 );
 
 
@@ -82,6 +82,8 @@ CREATE TABLE chatList (
     ,CONSTRAINT fk_chatList_chat FOREIGN KEY (chat_seq) REFERENCES chat(seq)
     ,CONSTRAINT fk_chatList_class FOREIGN KEY (class_seq) REFERENCES class(seq)
 );
+
+commit;
 
 
 
